@@ -138,10 +138,11 @@ def download_corrected():
 
 
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
     print("\n" + "="*60)
     print("  AI DOCUMENT ANALYZER - Pure Python NLP")
     print("  No API keys needed - 100% local processing")
     print("="*60)
-    print("\n  Server running at: http://localhost:5000")
+    print(f"\n  Server running at: http://localhost:{port}")
     print("  Open this URL in your browser to use the app\n")
-    app.run(debug=True, port=5000, use_reloader=False)
+    app.run(debug=False, host="0.0.0.0", port=port)
