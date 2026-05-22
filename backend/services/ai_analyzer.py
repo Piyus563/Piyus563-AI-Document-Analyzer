@@ -6,12 +6,12 @@ Features: Summary, Keywords, Q&A, Sentiment, Section Insights, Error Detection
 
 import re
 from collections import Counter
-import language_tool_python
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lsa import LsaSummarizer
 
 try:
+    import language_tool_python
     grammar_tool = language_tool_python.LanguageTool('en-US')
 except Exception:
     grammar_tool = None

@@ -9,6 +9,14 @@ import io
 
 sys.path.insert(0, os.path.dirname(__file__))
 
+# Auto-download NLTK data needed by sumy
+import nltk
+for pkg in ['punkt', 'punkt_tab', 'stopwords']:
+    try:
+        nltk.download(pkg, quiet=True)
+    except Exception:
+        pass
+
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 
